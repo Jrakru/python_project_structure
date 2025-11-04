@@ -1,0 +1,76 @@
+# Allowlist for Public Repository
+# Only paths listed here will be included in the public mirror
+# This uses prefix matching - directories should end with /
+
+# ============================================================================
+# ROOT CONFIGURATION FILES
+# ============================================================================
+README.md
+LICENSE
+CHANGELOG.md
+pyproject.toml
+.python-version
+
+# ============================================================================
+# SOURCE CODE
+# ============================================================================
+src/
+
+# ============================================================================
+# TESTS
+# ============================================================================
+tests/
+
+# ============================================================================
+# PUBLIC DOCUMENTATION
+# User-facing documentation only
+# Excludes: docs/decisions/, docs/investigations/ (moved to _internal/)
+# ============================================================================
+docs/
+# Note: docs/decisions/ and docs/investigations/ are NOT in this allowlist
+# because they should be moved to _internal/docs/
+
+# ============================================================================
+# PUBLIC SCRIPTS
+# Utility scripts for public users
+# ============================================================================
+scripts/
+
+# ============================================================================
+# PUBLIC GITHUB CONFIGURATION
+# Only public CI/CD workflows
+# ============================================================================
+.github/workflows/ci.yml
+
+# ============================================================================
+# PUBLIC .GITIGNORE
+# This will be renamed to .gitignore in the public repo
+# ============================================================================
+public.gitignore
+
+# ============================================================================
+# BUILD/PACKAGE FILES (uncomment if needed)
+# ============================================================================
+# setup.py
+# requirements.txt
+# Dockerfile
+# docker-compose.yml
+
+# ============================================================================
+# ADDITIONAL PUBLIC ASSETS (uncomment if needed)
+# ============================================================================
+# .dockerignore
+# Makefile
+# CONTRIBUTING.md
+# CODE_OF_CONDUCT.md
+# SECURITY.md
+
+# ============================================================================
+# NOTES
+# ============================================================================
+# - This allowlist uses PREFIX MATCHING
+# - "src/" includes ALL files under src/ directory
+# - "docs/" includes ALL files under docs/ directory
+# - Files/dirs NOT listed here will be excluded from public repo
+# - Everything in _internal/ is automatically excluded (not in allowlist)
+# - Run local test before publishing: see private_to_public_clean_mirror_workflow.md
