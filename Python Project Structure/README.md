@@ -248,8 +248,9 @@ pytest
 ```
 
 ### See Also
-- **How to Use**: `starter_pack/HOW_TO_USE.md` - Complete setup guide
-- **Manifest**: `starter_pack/MANIFEST.txt` - List of all included files
+- **How to Use**: `starter_pack/_internal/docs/starter-pack/HOW_TO_USE.md` - Complete setup guide
+- **Manifest**: `starter_pack/_internal/docs/starter-pack/MANIFEST.txt` - List of all included files
+- **Contents**: `starter_pack/_internal/docs/starter-pack/STARTER_PACK_CONTENTS.md` - Complete file listing
 
 ---
 
