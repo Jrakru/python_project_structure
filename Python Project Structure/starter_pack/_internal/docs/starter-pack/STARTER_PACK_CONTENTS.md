@@ -9,16 +9,20 @@
 
 ## 📦 Complete File List
 
-### Root Files (9)
+### Root Files (Public - 5)
 - `README.md` - Project overview template
-- `AGENTS.md` - AI agent quick reference
 - `pyproject.toml` - Project configuration
 - `.gitignore` - Python ignore patterns
 - `.python-version` - Python version (3.9)
 - `CHANGELOG.md` - Version history
 - `LICENSE` - MIT license template
-- `HOW_TO_USE.md` - Starter pack usage guide
-- `MANIFEST.txt` - File listing
+
+### Internal Files (`_internal/` - 4)
+- `_internal/README.md` - Internal content overview
+- `_internal/AGENTS.md` - AI agent quick reference
+- `_internal/docs/starter-pack/HOW_TO_USE.md` - Starter pack usage guide
+- `_internal/docs/starter-pack/MANIFEST.txt` - File listing
+- `_internal/docs/starter-pack/STARTER_PACK_CONTENTS.md` - This file
 
 ### Source Code (`src/PROJECT_NAME/`)
 - `__init__.py` - Package initialization with version
@@ -41,21 +45,23 @@
 - `lint.py` - Linting automation
 - `test.py` - Test automation
 
-### GitHub (`.github/`)
+### GitHub (`.github/` - Public)
 - `workflows/ci.yml` - CI/CD pipeline
+
+### GitHub Internal (`_internal/.github/`)
 - `copilot-instructions.md` - Comprehensive AI agent instructions
 
-### Project Management (`project/`)
+### Project Management (`_internal/project/`)
 - `README.md` - Project management overview
 - `AGENT_START_HERE.md` - AI agent entry point (<5KB)
 - `context/essential/checklists.md` - Essential checklists
 - `context/essential/warnings.md` - Critical warnings
 - `learnings/raw/sessions/template.md` - Session log template
 
-### Documentation (`docs/`)
+### Documentation (`docs/` - Public)
 - `README.md` - Documentation index
 
-### Reports (`reports/`)
+### Reports (`_internal/reports/`)
 - `README.md` - Reports index with archival policy
 
 ---
@@ -64,11 +70,53 @@
 
 ```
 starter_pack/
-├── .github/
-│   ├── workflows/
-│   │   └── ci.yml
-│   └── copilot-instructions.md
-├── docs/
+├── _internal/                        # ⚠️ Internal content (not for public repo)
+│   ├── .github/
+│   │   └── copilot-instructions.md
+│   ├── docs/
+│   │   ├── decisions/               # ADRs (Architecture Decision Records)
+│   │   ├── investigations/          # Research & analysis
+│   │   ├── setup/                   # Internal setup guides
+│   │   └── starter-pack/            # Starter pack documentation
+│   │       ├── HOW_TO_USE.md
+│   │       ├── MANIFEST.txt
+│   │       └── STARTER_PACK_CONTENTS.md
+│   ├── project/                     # Project management
+│   │   ├── context/
+│   │   │   ├── essential/
+│   │   │   │   ├── checklists.md
+│   │   │   │   └── warnings.md
+│   │   │   ├── situational/
+│   │   │   ├── reference/
+│   │   │   └── archive/
+│   │   ├── learnings/
+│   │   │   ├── raw/
+│   │   │   │   └── sessions/
+│   │   │   │       └── template.md
+│   │   │   └── distilled/
+│   │   │       ├── weekly/
+│   │   │       ├── monthly/
+│   │   │       └── patterns/
+│   │   ├── process/
+│   │   ├── planning/
+│   │   ├── backlog/
+│   │   ├── metrics/
+│   │   ├── .distillation/
+│   │   ├── onboarding/
+│   │   ├── AGENT_START_HERE.md
+│   │   └── README.md
+│   ├── reports/                     # Status reports
+│   │   ├── archive/
+│   │   └── README.md
+│   ├── scripts/                     # Internal automation
+│   ├── AGENTS.md                    # AI agent quick reference
+│   └── README.md                    # Internal content overview
+│
+├── .github/                         # ✅ Public GitHub config
+│   └── workflows/
+│       └── ci.yml
+│
+├── docs/                            # ✅ Public documentation
 │   ├── framework/
 │   ├── guides/
 │   │   ├── getting-started/
@@ -78,46 +126,20 @@ starter_pack/
 │   │   ├── architecture/
 │   │   ├── api/
 │   │   └── data-models/
-│   ├── decisions/
-│   ├── investigations/
 │   ├── assets/
 │   │   ├── diagrams/
 │   │   └── screenshots/
 │   └── README.md
-├── project/
-│   ├── context/
-│   │   ├── essential/
-│   │   │   ├── checklists.md
-│   │   │   └── warnings.md
-│   │   ├── situational/
-│   │   ├── reference/
-│   │   └── archive/
-│   ├── learnings/
-│   │   ├── raw/
-│   │   │   └── sessions/
-│   │   │       └── template.md
-│   │   └── distilled/
-│   │       ├── weekly/
-│   │       ├── monthly/
-│   │       └── patterns/
-│   ├── process/
-│   ├── planning/
-│   ├── backlog/
-│   ├── metrics/
-│   ├── .distillation/
-│   ├── onboarding/
-│   ├── AGENT_START_HERE.md
-│   └── README.md
-├── reports/
-│   ├── archive/
-│   └── README.md
-├── scripts/
+│
+├── scripts/                         # ✅ Public utility scripts
 │   ├── setup.py
 │   ├── lint.py
 │   ├── test.py
 │   └── README.md
-├── specs/
-├── src/
+│
+├── specs/                           # ✅ Public specifications
+│
+├── src/                             # ✅ Public source code
 │   └── PROJECT_NAME/
 │       ├── core/
 │       │   └── __init__.py
@@ -127,7 +149,8 @@ starter_pack/
 │       │   └── __init__.py
 │       ├── __init__.py
 │       └── __main__.py
-├── tests/
+│
+├── tests/                           # ✅ Public test suite
 │   ├── unit/
 │   │   └── test_example.py
 │   ├── integration/
@@ -135,15 +158,13 @@ starter_pack/
 │   ├── fixtures/
 │   ├── __init__.py
 │   └── conftest.py
-├── .gitignore
-├── .python-version
-├── AGENTS.md
-├── CHANGELOG.md
-├── HOW_TO_USE.md
-├── LICENSE
-├── MANIFEST.txt
-├── pyproject.toml
-└── README.md
+│
+├── .gitignore                       # ✅ Public
+├── .python-version                  # ✅ Public
+├── CHANGELOG.md                     # ✅ Public
+├── LICENSE                          # ✅ Public
+├── pyproject.toml                   # ✅ Public
+└── README.md                        # ✅ Public
 ```
 
 **Total**: 50+ directories, 29+ files
