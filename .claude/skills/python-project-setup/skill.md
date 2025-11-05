@@ -10,6 +10,44 @@ This skill helps you scaffold new Python projects following company standards wi
 - Converting an existing Python project to use internal/public separation
 - Ensuring proper structure for dual-repository workflow (private internal + public mirror)
 
+## 📚 Comprehensive Documentation Available
+
+This skill includes complete reference materials for both new users and AI agents:
+
+### For Quick Setup
+- **`template/`** - Complete, ready-to-copy project template with all files
+- **This file (skill.md)** - Quick start guide and workflows
+
+### For Understanding Structure
+- **`STRUCTURE_REFERENCE.md`** - Comprehensive guide to every directory
+  - Purpose of each folder
+  - Content guidelines
+  - Usage patterns
+  - Size limits for AI context
+  - Customization instructions
+
+### For Understanding Files
+- **`FILE_GUIDE.md`** - Complete guide to every template file
+  - Purpose of each file
+  - Customization requirements
+  - Template variables
+  - Must-edit vs optional
+  - Quick file finder reference
+
+### Recommended Reading Order
+
+**For New Users:**
+1. Read this file (skill.md) for overview and quick start
+2. Copy `template/` to your project location
+3. Reference `FILE_GUIDE.md` while customizing files
+4. Reference `STRUCTURE_REFERENCE.md` when adding new directories
+
+**For AI Agents:**
+1. Read this file (skill.md) for company policy and philosophy
+2. Reference `STRUCTURE_REFERENCE.md` for detailed directory purposes
+3. Reference `FILE_GUIDE.md` for file-specific customization
+4. Use `template/` as source for copying files
+
 ## Project Structure Philosophy
 
 ### Internal vs Public Separation
@@ -115,12 +153,15 @@ project-name/
 
 ## Usage
 
-### Quick Start - Copy Starter Pack
+### Quick Start - Copy Template
 
 ```bash
-# From this repository's root
-cp -r "Python Project Structure/starter_pack" /path/to/new-project
+# Copy template from this skill
+cp -r .claude/skills/python-project-setup/template /path/to/new-project
 cd /path/to/new-project
+
+# Alternative: Copy from repository source
+# cp -r "Python Project Structure/starter_pack" /path/to/new-project
 
 # Customize project name
 PROJECT_NAME="your_package_name"
@@ -144,8 +185,10 @@ mypy src/
 
 If you prefer manual setup or need to understand each component:
 
-1. **Create directory structure** (use starter pack template)
-2. **Set up pyproject.toml** with:
+1. **Create directory structure** (use `template/` directory or copy from repository)
+2. **Review** `STRUCTURE_REFERENCE.md` for directory purposes
+3. **Review** `FILE_GUIDE.md` for file-by-file customization guide
+4. **Set up pyproject.toml** with:
    - Ruff for linting/formatting
    - Mypy for type checking
    - Pytest for testing
@@ -314,7 +357,14 @@ A: Ensure `src/` is in PYTHONPATH (configured in pyproject.toml)
 
 ## References
 
-- Starter Pack: `Python Project Structure/starter_pack/`
+### Within This Skill
+- **Template**: `.claude/skills/python-project-setup/template/` - Complete project template
+- **Structure Guide**: `.claude/skills/python-project-setup/STRUCTURE_REFERENCE.md` - Every directory documented
+- **File Guide**: `.claude/skills/python-project-setup/FILE_GUIDE.md` - Every file documented
+- **This File**: `.claude/skills/python-project-setup/skill.md` - Quick start and workflows
+
+### In Repository
+- Starter Pack Source: `Python Project Structure/starter_pack/`
 - Full SST Doc: `Python Project Structure/PYTHON_PROJECT_STRUCTURE_SST.md`
 - Setup Checklist: `Python Project Structure/PYTHON_PROJECT_SETUP_CHECKLIST.md`
 - Mirroring Workflow: `private_to_public_clean_mirror_workflow.md`

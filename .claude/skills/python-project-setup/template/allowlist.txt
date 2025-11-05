@@ -1,0 +1,93 @@
+# Allowlist for Public Repository
+# Only paths listed here will be included in the public mirror
+# This uses prefix matching - directories should end with /
+#
+# COMPANY POLICY:
+# - NO AI tools or artifacts in public repo (AGENTS.md, copilot-instructions.md excluded)
+# - NO dotfiles/dotfolders EXCEPT .github/ (for CI/CD) and .gitignore
+# - .python-version: Remove if company policy requires (currently included as standard practice)
+
+# ============================================================================
+# ROOT CONFIGURATION FILES
+# ============================================================================
+README.md
+LICENSE
+CHANGELOG.md
+pyproject.toml
+.python-version
+
+# ============================================================================
+# SOURCE CODE
+# ============================================================================
+src/
+
+# ============================================================================
+# TESTS
+# ============================================================================
+tests/
+
+# ============================================================================
+# PUBLIC DOCUMENTATION
+# User-facing documentation only
+# Excludes: docs/decisions/, docs/investigations/ (moved to _internal/)
+# ============================================================================
+docs/
+# Note: docs/decisions/ and docs/investigations/ are NOT in this allowlist
+# because they should be moved to _internal/docs/
+
+# ============================================================================
+# PUBLIC SCRIPTS
+# Utility scripts for public users
+# ============================================================================
+scripts/
+
+# ============================================================================
+# PUBLIC GITHUB CONFIGURATION
+# ONLY CI/CD workflows - NO AI agent instructions per company policy
+# ============================================================================
+.github/workflows/ci.yml
+# .github/copilot-instructions.md - EXCLUDED per company policy
+# AGENTS.md - EXCLUDED per company policy (kept at root for internal use only)
+
+# ============================================================================
+# PUBLIC .GITIGNORE
+# This will be renamed to .gitignore in the public repo
+# ============================================================================
+public.gitignore
+
+# ============================================================================
+# BUILD/PACKAGE FILES (uncomment if needed)
+# ============================================================================
+# setup.py
+# requirements.txt
+# Dockerfile
+# docker-compose.yml
+
+# ============================================================================
+# ADDITIONAL PUBLIC ASSETS (uncomment if needed)
+# ============================================================================
+# .dockerignore
+# Makefile
+# CONTRIBUTING.md
+# CODE_OF_CONDUCT.md
+# SECURITY.md
+
+# ============================================================================
+# NOTES
+# ============================================================================
+# - This allowlist uses PREFIX MATCHING
+# - "src/" includes ALL files under src/ directory
+# - "docs/" includes ALL files under docs/ directory
+# - Files/dirs NOT listed here will be excluded from public repo
+# - Everything in _internal/ is automatically excluded (not in allowlist)
+#
+# COMPANY POLICY - AI ARTIFACTS:
+# - AGENTS.md: Kept at root for internal AI agent discovery, EXCLUDED from public
+# - .github/copilot-instructions.md: Internal only, EXCLUDED from public
+# - All other AI tool configurations: Should be in _internal/ or excluded
+#
+# COMPANY POLICY - DOTFILES:
+# - Only .github/ (CI/CD), .gitignore, and .python-version included
+# - All other dotfiles/folders excluded from public repo
+#
+# Run local test before publishing: see private_to_public_clean_mirror_workflow.md
