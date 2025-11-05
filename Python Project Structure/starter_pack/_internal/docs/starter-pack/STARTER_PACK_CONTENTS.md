@@ -9,17 +9,17 @@
 
 ## 📦 Complete File List
 
-### Root Files (Public - 5)
+### Root Files (Public - 7)
 - `README.md` - Project overview template
+- `AGENTS.md` - AI agent quick reference (for agent discovery)
 - `pyproject.toml` - Project configuration
 - `.gitignore` - Python ignore patterns
 - `.python-version` - Python version (3.9)
 - `CHANGELOG.md` - Version history
 - `LICENSE` - MIT license template
 
-### Internal Files (`_internal/` - 4)
+### Internal Documentation (`_internal/docs/` - 3)
 - `_internal/README.md` - Internal content overview
-- `_internal/AGENTS.md` - AI agent quick reference
 - `_internal/docs/starter-pack/HOW_TO_USE.md` - Starter pack usage guide
 - `_internal/docs/starter-pack/MANIFEST.txt` - File listing
 - `_internal/docs/starter-pack/STARTER_PACK_CONTENTS.md` - This file
@@ -47,9 +47,7 @@
 
 ### GitHub (`.github/` - Public)
 - `workflows/ci.yml` - CI/CD pipeline
-
-### GitHub Internal (`_internal/.github/`)
-- `copilot-instructions.md` - Comprehensive AI agent instructions
+- `copilot-instructions.md` - Comprehensive AI agent instructions (for agent discovery)
 
 ### Project Management (`_internal/project/`)
 - `README.md` - Project management overview
@@ -71,8 +69,6 @@
 ```
 starter_pack/
 ├── _internal/                        # ⚠️ Internal content (not for public repo)
-│   ├── .github/
-│   │   └── copilot-instructions.md
 │   ├── docs/
 │   │   ├── decisions/               # ADRs (Architecture Decision Records)
 │   │   ├── investigations/          # Research & analysis
@@ -109,12 +105,12 @@ starter_pack/
 │   │   ├── archive/
 │   │   └── README.md
 │   ├── scripts/                     # Internal automation
-│   ├── AGENTS.md                    # AI agent quick reference
 │   └── README.md                    # Internal content overview
 │
-├── .github/                         # ✅ Public GitHub config
-│   └── workflows/
-│       └── ci.yml
+├── .github/                         # ✅ Public GitHub config + agent instructions
+│   ├── workflows/
+│   │   └── ci.yml
+│   └── copilot-instructions.md      # AI agent instructions (for discovery)
 │
 ├── docs/                            # ✅ Public documentation
 │   ├── framework/
@@ -161,8 +157,11 @@ starter_pack/
 │
 ├── .gitignore                       # ✅ Public
 ├── .python-version                  # ✅ Public
+├── AGENTS.md                        # ✅ Public (AI agent quick reference for discovery)
 ├── CHANGELOG.md                     # ✅ Public
 ├── LICENSE                          # ✅ Public
+├── allowlist.txt                    # Template for public repo mirroring
+├── public.gitignore                 # Template .gitignore for public repo
 ├── pyproject.toml                   # ✅ Public
 └── README.md                        # ✅ Public
 ```

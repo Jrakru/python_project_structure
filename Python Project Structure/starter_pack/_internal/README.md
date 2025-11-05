@@ -6,11 +6,9 @@ included in the public repository.
 ## Contents
 
 - `project/` - Project management, planning, learnings
-- `docs/` - Internal documentation (ADRs, investigations, setup)
+- `docs/` - Internal documentation (ADRs, investigations, setup, starter-pack)
 - `reports/` - Status reports and analytics
-- `scripts/` - Internal automation scripts
-- `.github/` - Internal GitHub configurations
-- `AGENTS.md` - AI agent quick reference
+- `scripts/` - Internal automation scripts (for internal use only)
 
 ## Important
 

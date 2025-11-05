@@ -38,9 +38,16 @@ scripts/
 
 # ============================================================================
 # PUBLIC GITHUB CONFIGURATION
-# Only public CI/CD workflows
+# CI/CD workflows and AI agent instructions
 # ============================================================================
 .github/workflows/ci.yml
+.github/copilot-instructions.md
+
+# ============================================================================
+# AI AGENT INSTRUCTIONS
+# Agent discovery files at root
+# ============================================================================
+AGENTS.md
 
 # ============================================================================
 # PUBLIC .GITIGNORE
