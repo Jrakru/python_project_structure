@@ -9,14 +9,16 @@
 
 ## 📦 Complete File List
 
-### Root Files (Public - 7)
+### Root Files (Public - 6)
 - `README.md` - Project overview template
-- `AGENTS.md` - AI agent quick reference (for agent discovery)
 - `pyproject.toml` - Project configuration
 - `.gitignore` - Python ignore patterns
 - `.python-version` - Python version (3.9)
 - `CHANGELOG.md` - Version history
 - `LICENSE` - MIT license template
+
+### Root Files (Internal Only - 1)
+- `AGENTS.md` - AI agent quick reference (for internal agent discovery, EXCLUDED from public per company policy)
 
 ### Internal Documentation (`_internal/docs/` - 3)
 - `_internal/README.md` - Internal content overview
@@ -45,9 +47,12 @@
 - `lint.py` - Linting automation
 - `test.py` - Test automation
 
-### GitHub (`.github/` - Public)
+### GitHub (`.github/`)
+**Public:**
 - `workflows/ci.yml` - CI/CD pipeline
-- `copilot-instructions.md` - Comprehensive AI agent instructions (for agent discovery)
+
+**Internal Only (EXCLUDED from public per company policy):**
+- `copilot-instructions.md` - Comprehensive AI agent instructions (for internal agent discovery)
 
 ### Project Management (`_internal/project/`)
 - `README.md` - Project management overview
@@ -107,10 +112,10 @@ starter_pack/
 │   ├── scripts/                     # Internal automation
 │   └── README.md                    # Internal content overview
 │
-├── .github/                         # ✅ Public GitHub config + agent instructions
+├── .github/
 │   ├── workflows/
-│   │   └── ci.yml
-│   └── copilot-instructions.md      # AI agent instructions (for discovery)
+│   │   └── ci.yml                   # ✅ Public CI/CD
+│   └── copilot-instructions.md      # ⚠️  Internal only (excluded per company policy)
 │
 ├── docs/                            # ✅ Public documentation
 │   ├── framework/
@@ -157,10 +162,10 @@ starter_pack/
 │
 ├── .gitignore                       # ✅ Public
 ├── .python-version                  # ✅ Public
-├── AGENTS.md                        # ✅ Public (AI agent quick reference for discovery)
+├── AGENTS.md                        # ⚠️  Internal only (AI agent discovery, excluded per company policy)
 ├── CHANGELOG.md                     # ✅ Public
 ├── LICENSE                          # ✅ Public
-├── allowlist.txt                    # Template for public repo mirroring
+├── allowlist.txt                    # Template for public repo mirroring (company policy enforced)
 ├── public.gitignore                 # Template .gitignore for public repo
 ├── pyproject.toml                   # ✅ Public
 └── README.md                        # ✅ Public

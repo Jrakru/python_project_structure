@@ -1,6 +1,11 @@
 # Allowlist for Public Repository
 # Only paths listed here will be included in the public mirror
 # This uses prefix matching - directories should end with /
+#
+# COMPANY POLICY:
+# - NO AI tools or artifacts in public repo (AGENTS.md, copilot-instructions.md excluded)
+# - NO dotfiles/dotfolders EXCEPT .github/ (for CI/CD) and .gitignore
+# - .python-version: Remove if company policy requires (currently included as standard practice)
 
 # ============================================================================
 # ROOT CONFIGURATION FILES
@@ -38,16 +43,11 @@ scripts/
 
 # ============================================================================
 # PUBLIC GITHUB CONFIGURATION
-# CI/CD workflows and AI agent instructions
+# ONLY CI/CD workflows - NO AI agent instructions per company policy
 # ============================================================================
 .github/workflows/ci.yml
-.github/copilot-instructions.md
-
-# ============================================================================
-# AI AGENT INSTRUCTIONS
-# Agent discovery files at root
-# ============================================================================
-AGENTS.md
+# .github/copilot-instructions.md - EXCLUDED per company policy
+# AGENTS.md - EXCLUDED per company policy (kept at root for internal use only)
 
 # ============================================================================
 # PUBLIC .GITIGNORE
@@ -80,4 +80,14 @@ public.gitignore
 # - "docs/" includes ALL files under docs/ directory
 # - Files/dirs NOT listed here will be excluded from public repo
 # - Everything in _internal/ is automatically excluded (not in allowlist)
-# - Run local test before publishing: see private_to_public_clean_mirror_workflow.md
+#
+# COMPANY POLICY - AI ARTIFACTS:
+# - AGENTS.md: Kept at root for internal AI agent discovery, EXCLUDED from public
+# - .github/copilot-instructions.md: Internal only, EXCLUDED from public
+# - All other AI tool configurations: Should be in _internal/ or excluded
+#
+# COMPANY POLICY - DOTFILES:
+# - Only .github/ (CI/CD), .gitignore, and .python-version included
+# - All other dotfiles/folders excluded from public repo
+#
+# Run local test before publishing: see private_to_public_clean_mirror_workflow.md
